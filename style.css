@@ -21,6 +21,14 @@ body {
     padding: 0;
 }
 
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 100%;
+}
+
 h1, h2, h3 {
   line-height: 2rem;
 }
@@ -129,6 +137,10 @@ button {
     color: #aaa;
   }
 
+  .form .p-pur-relevance .value {
+    float: inherit;
+    color: #aaa;
+  }
 .answer {
   text-align: center;
   display: none;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="utf-8" />
     <title>Don't spend money on that purchase</title>
@@ -20,9 +21,14 @@
         <form class="form">
             <fieldset class="p-need">
                 <span class="value"></span>
-                <label>How really do I need this product/service ?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset> 
+                <label>How painful will life be without this product/service?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5.5" />
+            </fieldset>
+            <fieldset class="p-harm">
+                <span class="value"></span>
+                <label>Will this purchase cause harm to me or others? (Think of options trading, junk food)</label>
+                <input type="range" min="0" max="10" step="2.5" value="5.5" />
+            </fieldset>
             <fieldset class="p-finances">
                 <span class="value"></span>
                 <label>How much stress will this purchase add to my finances?</label>
@@ -33,15 +39,15 @@
                 <label>Have I compared prices and options?</label>
                 <input type="range" min="1" max="10" step="0.5" value="5.5" />
             </fieldset>
-            <fieldset class="p-usage-frequency">
+            <fieldset class="p-usage-freq">
                 <span class="value"></span>
                 <label>How often will I use It?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
+                <input type="range" id="usage-freq" min="1" max="8" value="5" step="1" />
             </fieldset>
-            <fieldset class="p-purchase-relevance">
-                <span class="value"></span>
-                <label>Will I still want this after some time?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
+            <fieldset class="p-pur-relevance">
+                <label>The product will still be relevant and last after a
+                <span class="value"></span>.</label>
+                <input type="range" min="2" max="10" step="2" value="4" />
             </fieldset>
             <fieldset class="p-longterm-goals">
                 <span class="value"></span>
@@ -65,10 +71,18 @@
 
     <section>
         <p>
-            When considering an impulsive purchase, it's wise to ask yourself a series of 
-            reflective questions to determine if the purchase is prudent.</p>
+            Money is a tool. For some, it is a tool to gain happiness.
+            For others, it is a tool to get freedom, security, power or whatever they want.
+            But the core use of this tool is to get basic comfort for leading
+            a good life.
+        </p>
+        <p>
+            This is an opinionated tool to help decide on a purchase of product.
+            When considering an impulsive purchase, it's wise to ask yourself a series of
+            reflective questions to determine if the purchase is prudent. If it is bad,
+            then avoid it, so that the money can be put to a better use.</p>
     </section>
-    
+
     <footer>Inspired fork from <a href="https://dont.build">dont.build</a> &mdash; 2023 / <a href="https://github.com/realvinay/dontspend.money">GitHub</a></footer>
 </div>
 
@@ -76,22 +90,50 @@
 <script>
 (function() {
     const params = [
+    <!-- todo: update weights to total 1-->
     { weight: 0.25, value: 5.5, negative: false, name: 'p-need' },
+    { weight: 0.25, value: 5.5, negative: true, name: 'p-harm' },
     { weight: 0.30, value: 5.5, negative: true, name: 'p-finances' },
     { weight: 0.15, value: 5.5, negative: false, name: 'p-price-comparison' },
-    { weight: 0.15, value: 5.5, negative: false, name: 'p-usage-frequency' },
-    { weight: 0.10, value: 5.5, negative: false, name: 'p-purchase-relevance' },
+    { weight: 0.15, value: 5.5, negative: false, name: 'p-usage-freq' },
+    { weight: 0.10, value: 5.5, negative: false, name: 'p-pur-relevance' },
     { weight: 0.05, value: 5.5, negative: false, name: 'p-longterm-goals' },
 ]
-
+    const usageFreqValueMap = {
+        1: "Only Once",
+        2: "Rarely",
+        3: "Less than once a year",
+        4: "Couple of times a year",
+        5: "Once in a month",
+        6: "Couple of times in a month",
+        7: "Weekly",
+        8: "Daily"
+    }
+    const purRelevanceValueMap = {
+        2: "Week",
+        4: "Month",
+        6: "Year",
+        8: "couple of years",
+        10: "decade",
+    }
     params.forEach((p, n) => {
         let net = 0;
         const inp = document.querySelector(`.${p.name} input`);
 
         inp.value = p.value;
         inp.oninput = (e) => {
-            const val = parseFloat(e.target.value, 64);
-            document.querySelector(`.${p.name} .value`).innerText = val;
+            let val = parseFloat(e.target.value);
+            paramName = p.name;
+            if (paramName == 'p-usage-freq') {
+                document.querySelector(`.${p.name} .value`).innerText = usageFreqValueMap[val];
+                // normalize score to 10 - max value for this field is 8
+                val = val * 10 / 8;
+            } else if (paramName == 'p-pur-relevance') {
+                document.querySelector(`.${p.name} .value`).innerText = purRelevanceValueMap[val];
+            }
+            else {
+              document.querySelector(`.${p.name} .value`).innerText = val;
+            }
             p.value = val;
 
             // Sum all weighted params.
