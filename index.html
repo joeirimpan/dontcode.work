@@ -83,7 +83,7 @@
             then avoid it, so that the money can be put to a better use.</p>
     </section>
 
-    <footer>Inspired fork from <a href="https://dont.build">dont.build</a> &mdash; 2023 / <a href="https://github.com/realvinay/dontspend.money">GitHub</a></footer>
+    <footer>Inspired fork from <a href="https://dont.build">dont.build</a> &mdash; <div id="year" style="display: inline-block"></div> / <a href="https://github.com/realvinay/dontspend.money">GitHub</a></footer>
 </div>
 
 
@@ -222,6 +222,12 @@
     copyMdBtn.addEventListener('click', function() {
         copyToClipboard(document.querySelector('.md-summary').value);
     });
+})();
+
+(function() {
+    const el = document.getElementById("year")
+    let year = new Date().getFullYear()
+    el.innerText = year;
 })();
 
 </script>
