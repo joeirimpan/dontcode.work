@@ -1,6 +1,7 @@
 :root {
-    --primary: #ffc200;
-    --secondary: #333;
+    --primary: #a855f7;
+    --primary-light: #c084fc;
+    --secondary: #1e1b4b;
 }
 
 * {
@@ -19,6 +20,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    min-height: 100vh;
 }
 
 datalist {
@@ -35,10 +38,14 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
+    color: var(--primary);
+}
+a:hover {
+    color: var(--secondary);
 }
 
 p {
-  color: #666;
+  color: #4c1d95;
 }
 
 fieldset {
@@ -85,15 +92,17 @@ input[type=range]::-webkit-slider-runnable-track  {
 button {
     background: var(--primary);
     cursor: pointer;
-    border-color: #000;
+    border-color: var(--secondary);
     padding: 10px 30px;
     font-size: 1.3rem;
     border-width: 1px 3px 3px 1px;
     border-style: solid;
     border-radius: 3px;
+    color: white;
+    font-weight: 600;
 }
     button:hover {
-        background: #aaa;
+        background: var(--primary-light);
     }
 
 .text-center {
@@ -109,12 +118,14 @@ button {
     border: 1px solid #ddd;
     border-radius: 3px;
     border: 2px solid var(--secondary);
-    box-shadow: 3px 3px 0px var(--secondary);   
+    box-shadow: 3px 3px 0px var(--secondary);
     margin-bottom: 45px;
+    background: white;
 }
 
 .container .title {
   margin: 15px 0 0px 0;
+  color: var(--secondary);
 }
 
 .help {
@@ -131,39 +142,41 @@ button {
   .form label {
     display: block;
     margin-bottom: 15px;
+    color: var(--secondary);
   }
   .form .value, .help {
     float: right;
-    color: #aaa;
+    color: #9ca3af;
   }
 
-  .form .p-pur-relevance .value {
-    float: inherit;
-    color: #aaa;
-  }
 .answer {
   text-align: center;
   display: none;
 }
 .answer h1 {
   margin: 30px 0;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
   .answer span {
     display: inline-block;
     background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
   }
   .answer .summary {
     font-family: monospace;
     width: 100%;
     padding: 10px;
-    min-height: 200px;
+    min-height: 250px;
+    border: 2px solid var(--secondary);
+    border-radius: 3px;
   }
 
 footer {
   margin: 30px auto;
-  color: #999;
+  color: #6b7280;
   font-size: 0.975rem;
 }
 
@@ -174,16 +187,20 @@ footer {
     padding: 0;
   }
   .box {
-    padding: 0;
-    border: 0;
-    box-shadow: none;    
+    padding: 20px;
+    border: 2px solid var(--secondary);
+    box-shadow: 3px 3px 0px var(--secondary);
   }
   .help {
     float: none;
   }
   .form label {
     float: left;
-    max-width: 90%;
+    max-width: 85%;
+  }
+  .answer h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -206,11 +223,12 @@ footer {
   font-weight: 700;
   text-align: center;
   background: var(--primary);
+  color: white;
   z-index: 100;
   visibility: hidden;
   border-radius: 3px;
   border: 2px solid var(--secondary);
-  box-shadow: 3px 3px 0px var(--secondary);   
+  box-shadow: 3px 3px 0px var(--secondary);
 }
 
 .notice.visible {

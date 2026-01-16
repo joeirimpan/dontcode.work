@@ -3,60 +3,60 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Don't spend money on that purchase</title>
-    <meta name="description" content="A simple, opinionated tool for helping decide whether to buy that one thing or not." />
+    <title>Don't code that by hand</title>
+    <meta name="description" content="A satirical tool for the vibe coding era. Should you write this code yourself, or just vibe it?" />
     <link rel="shortcut icon" href="/favicon.png" />
     <meta property="og:image" content="/thumb.png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css?v=2" rel="stylesheet" type="text/css" />
+    <link href="style.css?v=3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div class="container">
     <section class="box">
         <p class="help">1: Low, 10: High</p>
-        <h1 class="title">Don't spend money on that impulsive purchase</h1>
-        <p>A simple, opinionated tool for helping decide whether to buy that one thing or not.</p>
+        <h1 class="title">Don't code that by hand</h1>
+        <p>A satirical tool for the vibe coding era. Should you write this code yourself, or just vibe it?</p>
         <br />
         <form class="form">
-            <fieldset class="p-need">
+            <fieldset class="p-boilerplate">
                 <span class="value"></span>
-                <label>How painful will life be without this product/service?</label>
-                <input type="range" min="0" max="10" step="0.5" value="5.5" />
+                <label>How much of this is boilerplate you've written 100 times before?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
             </fieldset>
-            <fieldset class="p-harm">
+            <fieldset class="p-learning">
                 <span class="value"></span>
-                <label>Will this purchase cause harm to me or others? (Think of options trading, junk food)</label>
-                <input type="range" min="0" max="10" step="2.5" value="5.5" />
+                <label>Will manually writing this teach you something you don't already know?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
             </fieldset>
-            <fieldset class="p-finances">
+            <fieldset class="p-exists">
                 <span class="value"></span>
-                <label>How much stress will this purchase add to my finances?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
+                <label>Has this exact code been written millions of times before?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
             </fieldset>
-            <fieldset class="p-usage-freq">
+            <fieldset class="p-joy">
                 <span class="value"></span>
-                <label>How often will I use It?</label>
-                <input type="range" min="1" max="8" value="5" step="1" />
+                <label>Will you actually enjoy writing this by hand?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
             </fieldset>
-            <fieldset class="p-pur-relevance">
-                <label>The product will still be relevant and last after a
-                <span class="value"></span>.</label>
-                <input type="range" min="2" max="10" step="2" value="4" />
-            </fieldset>
-            <fieldset class="p-price-comparison">
+            <fieldset class="p-urgency">
                 <span class="value"></span>
-                <label>Have I compared prices and options?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
+                <label>How urgently does this need to ship?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
             </fieldset>
-            <fieldset class="p-longterm-goals">
+            <fieldset class="p-complexity">
                 <span class="value"></span>
-                <label>How does this purchase align with my long-term goals?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
+                <label>How complex and interconnected is this code?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
+            </fieldset>
+            <fieldset class="p-ego">
+                <span class="value"></span>
+                <label>Be honest: are you avoiding AI because it feels like "cheating"?</label>
+                <input type="range" min="0" max="10" step="0.5" value="5" />
             </fieldset>
         </form>
         <div class="text-center">
-          <button id="btn-toggle-answer">Show answer</button>
+          <button id="btn-toggle-answer">Show verdict</button>
         </div>
         <div class="answer hide">
             <h1><span><span class="bool"></span> (<span class="percent"></span>)</span></h1>
@@ -70,108 +70,102 @@
     <noscript><h1>This page requires Javascript to function.</h1></noscript>
 
     <section>
+        <h4>The Vibe Coding Manifesto</h4>
         <p>
-            This is an opinionated tool to help decide on a purchase of product.
-            When considering an impulsive purchase, it's wise to ask yourself a series of
-            reflective questions to determine if the purchase is prudent. If it is bad,
-            then avoid it, so that the money can be put to a better use.</p>
+            We've entered a new era. The old ways of writing every semicolon by hand,
+            of memorizing syntax, of Stack Overflow copy-paste archaeology—they served us well.
+            But now? Now we have context. We have awareness. We have vibes.
+        </p>
+        <p>
+            Vibe coding isn't about being lazy. It's about recognizing that your value
+            as a developer isn't in typing speed or memorizing array methods. It's in
+            <em>knowing what to build</em>, <em>understanding the problem</em>, and
+            <em>directing the solution</em>. The AI handles the syntax. You handle the semantics.
+        </p>
+        <p>
+            Your ancestors debugged assembly so you could write Python.<br>
+            You can vibe code so your descendants can... probably just think at computers.
+        </p>
 
         <h4>Usage</h4>
-        <p>Impulsive purchases mostly happen in my mobile. To avoid it,
-            I removed quick-commerce, e-commerce apps from my mobile. Any time I want to make
-            a purchase, I come to my browser where I have bookmarked this tab. Then, before
-            making the purchase, I go through this filter to avoid impulsive purchases.
+        <p>
+            When you're about to write code and feel that familiar guilt—"shouldn't I do this myself?"—
+            come here first. Answer honestly. Let the algorithm decide if your ego is getting in the way
+            of shipping.
         </p>
     </section>
 
-    <footer>Inspired fork from <a href="https://dont.build">dont.build</a> &mdash; <div id="year" style="display: inline-block"></div> / <a href="https://github.com/realvinay/dontspend.money">GitHub</a></footer>
+    <footer>Inspired fork from <a href="https://dont.build">dont.build</a> and <a href="https://dontspend.money">dontspend.money</a> &mdash; <span id="year"></span> / <a href="https://github.com/realvinay/dontspend.money">GitHub</a></footer>
 </div>
 
 
 <script>
 (function() {
+    // Parameters for the vibe-o-meter
+    // negative: true means higher value = LESS vibe-worthy (inverted in calculation)
     const params = [
-    { weight: 0.2, value: 5.5, negative: false, name: 'p-need' },
-    { weight: 0.2, value: 5.5, negative: true, name: 'p-harm' },
-    { weight: 0.2, value: 5.5, negative: true, name: 'p-finances' },
-    { weight: 0.15, value: 5.5, negative: false, name: 'p-usage-freq' },
-    { weight: 0.15, value: 5.5, negative: false, name: 'p-pur-relevance' },
-    { weight: 0.05, value: 5.5, negative: false, name: 'p-price-comparison' },
-    { weight: 0.05, value: 5.5, negative: false, name: 'p-longterm-goals' },
-]
-    const usageFreqValueMap = {
-        1: "Only Once",
-        2: "Rarely",
-        3: "Less than once a year",
-        4: "Couple of times a year",
-        5: "Once in a month",
-        6: "Couple of times in a month",
-        7: "Weekly",
-        8: "Daily"
-    }
-    const purRelevanceValueMap = {
-        2: "Week",
-        4: "Month",
-        6: "Year",
-        8: "couple of years",
-        10: "decade",
-    }
+        { weight: 0.20, value: 5, negative: false, name: 'p-boilerplate' },  // More boilerplate = vibe it
+        { weight: 0.20, value: 5, negative: true,  name: 'p-learning' },     // More learning value = write it yourself
+        { weight: 0.15, value: 5, negative: false, name: 'p-exists' },       // Already exists everywhere = vibe it
+        { weight: 0.15, value: 5, negative: true,  name: 'p-joy' },          // More joy = write it yourself
+        { weight: 0.15, value: 5, negative: false, name: 'p-urgency' },      // More urgent = vibe it
+        { weight: 0.10, value: 5, negative: true,  name: 'p-complexity' },   // More complex = write it yourself (need control)
+        { weight: 0.05, value: 5, negative: false, name: 'p-ego' },          // More ego = vibe it (get over yourself)
+    ];
+
+    // Sassy verdict messages
+    const getVerdict = (sum) => {
+        if (sum > 0.65) {
+            return "Just vibe it. Your ancestors debugged assembly so you wouldn't have to.";
+        } else if (sum > 0.54) {
+            return "Vibe it. Life's too short for boilerplate.";
+        } else if (sum > 0.50) {
+            return "Vibe it, but maybe skim the output.";
+        } else if (sum === 0.50) {
+            return "Flip a coin. Or just ask Claude—same energy.";
+        } else if (sum > 0.46) {
+            return "Write it yourself... if you must.";
+        } else if (sum > 0.35) {
+            return "Okay, write it by hand. This one's worth it.";
+        } else {
+            return "Go full artisan. We respect the craft.";
+        }
+    };
+
     params.forEach((p, n) => {
-        let net = 0;
         const inp = document.querySelector(`.${p.name} input`);
 
         inp.value = p.value;
         inp.oninput = (e) => {
             let val = parseFloat(e.target.value);
-            paramName = p.name;
-            if (paramName == 'p-usage-freq') {
-                document.querySelector(`.${p.name} .value`).innerText = usageFreqValueMap[val];
-                // normalize score to 10 - max value for this field is 8
-                val = val * 10 / 8;
-            } else if (paramName == 'p-pur-relevance') {
-                document.querySelector(`.${p.name} .value`).innerText = purRelevanceValueMap[val];
-            }
-            else {
-              document.querySelector(`.${p.name} .value`).innerText = val;
-            }
+            document.querySelector(`.${p.name} .value`).innerText = val;
             p.value = val;
 
-            // Sum all weighted params.
+            // Sum all weighted params
             const sum = params.reduce((prev, pm) => {
                 let v = pm.value;
                 if (pm.negative) {
                     v = 10 - v;
                 }
-
                 return prev + (v / 10 * pm.weight);
             }, 0);
 
-            // Display the results.
-            const percent = `${(sum * 100).toFixed(0)}%`
-
-            let b = 'Yes';
-            if (sum < 0.5 && sum > 0.46) {
-                b = `No, but a close call.`;
-            } else if (sum < 0.48) {
-                b = `No.`;
-            } else if (sum > 0.5 && sum < 0.54) {
-                b = `Yes, but a close call.`;
-            } else if(sum === 0.5) {
-                b = '50-50. Go with the gut.';
-            }
+            // Display the results
+            const percent = `${(sum * 100).toFixed(0)}%`;
+            const verdict = getVerdict(sum);
 
             document.querySelector(".answer .percent").innerText = percent;
-            document.querySelector(".answer .bool").innerText = b;
+            document.querySelector(".answer .bool").innerText = verdict;
 
-            // Print the summary in the textbox.
+            // Print the summary in the textbox
             let summary = '';
-            let mdSummary = '||Question|Answer|\n|---|---|---|\n';
+            let mdSummary = '| | Question | Answer |\n|---|---|---|\n';
             document.querySelectorAll(".form fieldset").forEach((f, n) => {
                 summary += `${n + 1}. ${f.querySelector("label").innerText} = ${f.querySelector("input").value}\n`;
-                mdSummary += `|${n + 1}|${f.querySelector("label").innerText}|${f.querySelector("input").value}|\n`;
+                mdSummary += `| ${n + 1} | ${f.querySelector("label").innerText} | ${f.querySelector("input").value} |\n`;
             });
-            summary += `\n=> ${b} (${percent})`;
-            mdSummary += `||Result:|${b} (${percent})|`;
+            summary += `\n=> ${verdict} (${percent})`;
+            mdSummary += `| | **Verdict** | ${verdict} (${percent}) |`;
             document.querySelector('.summary').value = summary;
             document.querySelector('.md-summary').value = mdSummary;
         };
@@ -187,10 +181,10 @@
     btn.addEventListener('click', function() {
         if(ans.style.display === 'block') {
             ans.style.display = 'none';
-            btn.innerText = "Show answer";
+            btn.innerText = "Show verdict";
         } else {
             ans.style.display = 'block';
-            btn.innerText = "Hide answer";
+            btn.innerText = "Hide verdict";
         }
     });
 })();
@@ -200,21 +194,16 @@
     const copyMdBtn = document.querySelector('.copy-md');
 
     var copyToClipboard = function(val) {
-        var tempTxt=document.createElement("textarea");
-        tempTxt.value=val;
-        document.body.appendChild(tempTxt);
-        tempTxt.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTxt);
-
-        let notice = document.createElement("span");
-        notice.className = "notice visible";
-        notice.innerHTML = "Copied to clipboard.";
-        document.body.appendChild(notice);
-        setTimeout(() => {
-            document.body.removeChild(notice);
-        }, 3000);
-    }
+        navigator.clipboard.writeText(val).then(function() {
+            let notice = document.createElement("span");
+            notice.className = "notice visible";
+            notice.innerHTML = "Copied to clipboard.";
+            document.body.appendChild(notice);
+            setTimeout(() => {
+                document.body.removeChild(notice);
+            }, 3000);
+        });
+    };
 
     copyBtn.addEventListener('click', function() {
         copyToClipboard(document.querySelector('.summary').value);
@@ -226,9 +215,8 @@
 })();
 
 (function() {
-    const el = document.getElementById("year")
-    let year = new Date().getFullYear()
-    el.innerText = year;
+    const el = document.getElementById("year");
+    el.innerText = new Date().getFullYear();
 })();
 
 </script>
