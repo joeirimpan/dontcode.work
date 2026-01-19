@@ -1,6 +1,6 @@
 # Vibe it or code it?
 
-Visit [**dont.code**](https://dont.code).
+Visit [**dontcode.work**](https://dontcode.work).
 
 A satirical decision tool for the vibe coding era. Should you write this code yourself, or just vibe it with AI?
 
