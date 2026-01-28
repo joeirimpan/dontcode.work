@@ -2,6 +2,26 @@
     --primary: #a855f7;
     --primary-light: #c084fc;
     --secondary: #1e1b4b;
+    --bg-gradient-start: #faf5ff;
+    --bg-gradient-end: #f3e8ff;
+    --box-bg: white;
+    --text-muted: #9ca3af;
+    --text-paragraph: #4c1d95;
+    --footer-text: #6b7280;
+    --border-color: #ddd;
+}
+
+[data-theme="dark"] {
+    --primary: #c084fc;
+    --primary-light: #d8b4fe;
+    --secondary: #e9d5ff;
+    --bg-gradient-start: #1a1625;
+    --bg-gradient-end: #0f0a1a;
+    --box-bg: #1e1b2e;
+    --text-muted: #a78bfa;
+    --text-paragraph: #c4b5fd;
+    --footer-text: #a78bfa;
+    --border-color: #3b3154;
 }
 
 * {
@@ -20,8 +40,9 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 datalist {
@@ -45,7 +66,7 @@ a:hover {
 }
 
 p {
-  color: #4c1d95;
+  color: var(--text-paragraph);
 }
 
 fieldset {
@@ -115,12 +136,13 @@ button {
 }
 .box {
     padding: 30px 45px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     border: 2px solid var(--secondary);
     box-shadow: 3px 3px 0px var(--secondary);
     margin-bottom: 45px;
-    background: white;
+    background: var(--box-bg);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .container .title {
@@ -146,7 +168,7 @@ button {
   }
   .form .value, .help {
     float: right;
-    color: #9ca3af;
+    color: var(--text-muted);
   }
 
 .answer {
@@ -172,11 +194,13 @@ button {
     min-height: 250px;
     border: 2px solid var(--secondary);
     border-radius: 3px;
+    background: var(--box-bg);
+    color: var(--secondary);
   }
 
 footer {
   margin: 30px auto;
-  color: #6b7280;
+  color: var(--footer-text);
   font-size: 0.975rem;
 }
 
@@ -210,6 +234,26 @@ footer {
     max-width: 70%;
   }
 }
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--box-bg);
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  box-shadow: 2px 2px 0px var(--secondary);
+  transition: background 0.3s ease;
+  z-index: 100;
+}
+  .theme-toggle:hover {
+    background: var(--primary);
+  }
 
 .notice {
   position: fixed;

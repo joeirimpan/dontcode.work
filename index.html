@@ -8,9 +8,11 @@
     <link rel="shortcut icon" href="/favicon.png" />
     <meta property="og:image" content="/thumb.png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css?v=3" rel="stylesheet" type="text/css" />
+    <link href="style.css?v=4" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
 
 <div class="container">
     <section class="box">
@@ -217,6 +219,36 @@
 (function() {
     const el = document.getElementById("year");
     el.innerText = new Date().getFullYear();
+})();
+
+(function() {
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    const getPreferredTheme = () => {
+        const stored = localStorage.getItem('theme');
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const setTheme = (theme) => {
+        html.setAttribute('data-theme', theme);
+        toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+    };
+
+    setTheme(getPreferredTheme());
+
+    toggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
 })();
 
 </script>
