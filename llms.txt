@@ -1,0 +1,31 @@
+# Don't Code That By Hand
+
+> A satirical decision tool for the vibe coding era. Should you write this code yourself, or just vibe it with AI?
+
+## About
+
+dontcode.work is a simple, interactive web tool that helps developers decide whether to write code manually or delegate it to AI. It uses a weighted scoring system based on seven factors to produce a verdict.
+
+## How It Works
+
+Users rate their situation on seven parameters (scale 1-10):
+
+1. **Boilerplate level** - Higher = lean toward AI
+2. **Learning value** - Higher = lean toward writing yourself
+3. **Code commonality** - More common = lean toward AI
+4. **Joy factor** - More enjoyment = lean toward writing yourself
+5. **Urgency** - More urgent = lean toward AI
+6. **Complexity** - More complex = lean toward writing yourself (need control)
+7. **Ego check** - Avoiding AI because it feels like "cheating" = lean toward AI
+
+The tool calculates a weighted percentage and delivers a sassy verdict ranging from "Just vibe it" to "Go full artisan."
+
+## The Vibe Coding Philosophy
+
+Your value as a developer isn't in typing speed or memorizing syntax—it's in knowing what to build, understanding the problem, and directing the solution. The AI handles the syntax. You handle the semantics.
+
+## Links
+
+- Website: https://dontcode.work
+- Source: https://github.com/joeirimpan/dontcode.work
+- Inspired by: [dont.build](https://dont.build) and [dontspend.money](https://dontspend.money)
